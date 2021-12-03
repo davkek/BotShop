@@ -1,15 +1,15 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 
 
 menu = InlineKeyboardButton('Главное меню', callback_data='menu')
 
 """----Главное меню---"""
-markup = InlineKeyboardMarkup(row_width=2)
-contact = InlineKeyboardButton('Контакты', callback_data='contact')
-catalog = InlineKeyboardButton('Каталог', callback_data='catalog')
-orders = InlineKeyboardButton('Мои заказы', callback_data='orders')
-cart = InlineKeyboardButton('Корзина', callback_data='cart')
-markup.add(contact, catalog, orders, cart)
+btnContacts = KeyboardButton('Контакты')
+btnCatalog = KeyboardButton('Каталог')
+btnMyOrders = KeyboardButton('Мои заказы')
+btnCart = KeyboardButton('Корзина')
+mainMenu = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
+mainMenu.row(btnContacts, btnCatalog).row(btnMyOrders, btnCart)
 
 """----Каталог---"""
 catalogMenu = InlineKeyboardMarkup(row_width=2)
