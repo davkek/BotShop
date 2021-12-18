@@ -1,6 +1,6 @@
 from aiogram import executor, types
 from aiogram.types import ReplyKeyboardMarkup
-from loader import *
+from loader import dp, db
 import filters
 import logging
 
