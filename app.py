@@ -25,7 +25,7 @@ async def cmd_start(message: types.Message):
     )
 
 
-async def on_startup():
+async def on_startup(dp):
     logging.basicConfig(level=logging.DEBUG)
     db.create_tables()
 
