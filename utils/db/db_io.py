@@ -4,7 +4,7 @@ import csv
 
 
 def csv_output_categories():
-    db_file = 'C:/Users/user/Desktop/учомба/Bot1.1/data/database.db'
+    db_file = 'data/database.db'
     conn = sqlite3.connect(db_file, isolation_level=None,
                            detect_types=sqlite3.PARSE_COLNAMES)
     db_df = pd.read_sql_query("SELECT * FROM categories", conn)
@@ -12,7 +12,7 @@ def csv_output_categories():
 
 
 def csv_output_products():
-    db_file = 'C:/Users/user/Desktop/учомба/Bot1.1/data/database.db'
+    db_file = 'data/database.db'
     conn = sqlite3.connect(db_file, isolation_level=None,
                            detect_types=sqlite3.PARSE_COLNAMES)
     db_df = pd.read_sql_query("SELECT * FROM products", conn)
@@ -20,7 +20,7 @@ def csv_output_products():
 
 
 def csv_input_categories():
-    con = sqlite3.connect('C:/Users/user/Desktop/учомба/Bot1.1/data/database.db')
+    con = sqlite3.connect('data/database.db')
     cur = con.cursor()
     with open('csv_input/dbi_cat.csv', 'r') as fin:
         # csv.DictReader по умолчанию использует первую строку под заголовки столбцов
@@ -33,7 +33,7 @@ def csv_input_categories():
 
 
 def csv_input_products():
-    con = sqlite3.connect('C:/Users/user/Desktop/учомба/Bot1.1/data/database.db')
+    con = sqlite3.connect('data/database.db')
     cur = con.cursor()
     with open('csv_input/dbi_product.csv', 'r') as fin:
         # csv.DictReader по умолчанию использует первую строку под заголовки столбцов
